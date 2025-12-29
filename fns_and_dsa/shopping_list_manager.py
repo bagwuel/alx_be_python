@@ -9,7 +9,10 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = int(input("Enter your choice: "))
+        choice = input("Enter your choice: ")
+        if not choice.isnumeric():
+            print("Enter a number from the menu")
+            continue
 
         if choice == '1':
             # Prompt for and add an item
