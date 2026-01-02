@@ -2,8 +2,8 @@ def safe_divide(numerator, denominator):
     try:
          nume = float(numerator)
          deno = float(denominator)
-         return(nume / deno)
+         return(f"The result of the division is {nume / deno}")
     except ValueError:
-        return("ValueError: both arguments must be numbers")
+        return("Error: Please enter numeric values only.")
     except ZeroDivisionError:
-        return("ZeroDivisionError: the second argument must not be zero")
+        return("Error: Cannot divide by zero.")
