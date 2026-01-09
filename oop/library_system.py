@@ -13,7 +13,7 @@ class EBook(Book):
         self.file_size = file_size
 
     def __str__(self):
-        return(f"{super().__str__()}, File Size: {self.file_size}kb")
+        return(f"{super().__str__()}, File Size: {self.file_size}KB")
 
 
 
