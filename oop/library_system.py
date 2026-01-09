@@ -3,15 +3,8 @@ class Book:
         self.title = title
         self.author = authur
     
-    def print_name(self):
-                return(type(self).__name__)
-
-    def get_name(self):
-        return(f"{self.title} by {self.author}")
-
-    def get_size(self):
-        return("")
-
+    def __str__(self):
+                return(f"{type(self).__name__}: {self.title} by {self.author}")
 
 
 class EBook(Book):
@@ -19,8 +12,8 @@ class EBook(Book):
         super().__init__(title, author)
         self.file_size = file_size
 
-    def get_size(self):
-        return(f", File Size: {self.file_size}")
+    def __str__(self):
+        return(f"{super().__str__()}, File Size: {self.file_size}")
 
 
 
@@ -29,8 +22,7 @@ class PrintBook(Book):
         super().__init__(title, author)
         self.page_count = page_count
 
-    def get_size(self):
-        return(f", Page Count: {self.page_count}")
+    def __str__(self):                                  return(f"{super().__str__()}, Page Count: {self.page_count}")
 
 
 class Library:
@@ -42,4 +34,4 @@ class Library:
 
     def list_books(self):
         for book in self._book:
-            print(f"{book.print_name()}: {book.get_name()}{book.get_size()}")
+            print(book)
